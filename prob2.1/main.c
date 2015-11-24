@@ -10,6 +10,7 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -56,6 +57,44 @@ int main(int argc, const char * argv[]) {
         int schoolyear;
     };
     printf("Size of struct Student: %lu bytes\n", sizeof(struct Student));
+    
+    typedef struct {
+        char name[20];
+        int birthyear;
+        char gender;
+        int house_num;
+    } People;
+    printf("Size of typdef People: %lu bytes\n", sizeof(People));
+    
+    char* str_name = "Thanh C. Tran";
+    printf("Size of a string: %ld bytes\n", sizeof(char)*strlen(str_name));
+    printf("Size of a pointer: %ld bytes\n", sizeof(str_name));
+    
+    int* ptr;
+    printf("Size of a pointer: %ld bytes\n", sizeof(ptr));
+    
+    int array1[5];
+    int array2[] = {1, 2, 3, 4};
+    printf("Size of a array array1[5]: %ld bytes\n", sizeof(array1));
+    printf("Size of a array array2[] = {1, 2, 3, 4}: %ld bytes\n", sizeof(array2));
+
+    union color {
+        long a;
+        int b;
+    };
+    printf("Size of a specific union: %ld bytes\n", sizeof(union color)); // max(sizeof(a), sizeof(b))
+    
+    typedef struct {
+        char name[20];
+        unsigned int age;
+        enum gender {Male, Female} gen;
+        struct Address {
+            char city[20];
+            char stress[20];
+            int number;
+        } addr;
+    } Student_Info;
+    printf("Size of a composed type: %ld bytes\n", sizeof(Student_Info));
     
     printf("Hello, World!\n");
     return 0;
