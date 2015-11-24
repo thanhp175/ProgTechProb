@@ -19,6 +19,9 @@ int main(int argc, const char * argv[]) {
     int integer = 1;
     printf("Size of int: %lu\n", sizeof(integer));
     
+    short short_integer = 1;
+    printf("Size of short: %lu\n", sizeof(short_integer));
+    
     printf("Hello, World!\n");
     return 0;
 }
