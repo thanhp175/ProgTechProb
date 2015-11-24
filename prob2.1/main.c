@@ -96,6 +96,5 @@ int main(int argc, const char * argv[]) {
     } Student_Info;
     printf("Size of a composed type: %ld bytes\n", sizeof(Student_Info));
     
-    printf("Hello, World!\n");
     return 0;
 }
